@@ -10,18 +10,17 @@ var alunos = [
     { nome: "Gustavo Henrique", notas: [8, 7.5, 5], curso: "Sistemas para Internet" }
 ];
 
-function calculaMedia(array) {
+function calculaMedia(obj) {
     for (let aluno of alunos) {
         let media = 0;
-        let notas = 0;
+        let somaNotas = 0;
         for (let nota of aluno.notas) {
-            notas = notas + nota;
+            somaNotas += nota;
         }
-        media = notas / (aluno.notas).length
+        media = somaNotas / aluno.notas.length
         if (media >= 7) {
             console.log("Nome: " + aluno.nome, "/ Média: " + media.toFixed(2))
         }
     }
 }
-
 calculaMedia(alunos);
